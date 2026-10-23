@@ -1,0 +1,4 @@
+Python makes programming interesting.
+Functions help organize code!
+File handling is useful for real-world applications.
+Practice makes progress.
