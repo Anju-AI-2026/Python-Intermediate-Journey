@@ -1,16 +1,15 @@
-# LeetCode #217 - Contains Duplicate
+# LeetCode #1480 - Running Sum of 1d Array
 
 class Solution:
 
-    def containsDuplicate(self, nums):
+    def runningSum(self, nums):
 
-        seen = set()
+        result = []
+        total = 0
 
         for num in nums:
 
-            if num in seen:
-                return True
+            total += num
+            result.append(total)
 
-            seen.add(num)
-
-        return False
+        return result
