@@ -1,54 +1,41 @@
 # Two Sum
 
-A Python solution to the LeetCode Two Sum problem using a dictionary and the `enumerate()` function.
+**LeetCode Problem:** #1
 
 ## Problem Description
 
-Given a list of integers `nums` and an integer `target`, find the indices of two numbers whose sum equals the target.
-
-The solution returns the indices of the two numbers.
+Given an array of integers and a target value, find the indices of two numbers whose sum equals the target.
 
 ## Example
 
 **Input:**
-```python
-nums = [2, 7, 11, 15]
-target = 9
-```
+- Numbers: `[2, 7, 11, 15]`
+- Target: `9`
 
-**Output:**
-```text
-[0, 1]
-```
+**Expected Output:** `[0, 1]`
 
-**Explanation:**
+## Concepts Used
 
-The numbers `2` and `7` add up to `9`. Their indices are `0` and `1`.
-
-## Concepts Practiced
-
-- Python dictionaries
-- `enumerate()` function
-- `for` loops
-- Conditional statements
-- Dictionary membership using `in`
-- Functions and return values
-- Index-based data processing
+- Python classes and methods
+- Dictionaries
+- `enumerate()`
+- Loops and conditional statements
+- Key-value pairs
 
 ## How It Works
 
-1. An empty dictionary named `seen` stores previously visited numbers and their indices.
-2. `enumerate(nums)` provides each number along with its index.
-3. The `difference` variable calculates the number needed to reach the target.
-4. The program checks whether the difference already exists in `seen`.
-5. If found, the function returns the stored index and the current index.
-6. Otherwise, the current number and its index are added to the dictionary.
+1. Create an empty dictionary named `seen`.
+2. Iterate through the numbers using `enumerate()` to get each number and its index.
+3. Calculate the difference between the target and the current number.
+4. Check whether that difference already exists in the dictionary.
+5. If it exists, return the two indices.
+6. Otherwise, store the current number and its index in the dictionary.
 
 ## Time and Space Complexity
 
-- **Time Complexity:** O(n) – The list is traversed once, and dictionary lookups take O(1) average time.
-- **Space Complexity:** O(n) – The dictionary may store up to all elements.
+- **Time Complexity:** O(n) — Each element is visited once.
+- **Space Complexity:** O(n) — The dictionary stores numbers and their indices.
 
-## Purpose
+## Learning Purpose
 
-To practice dictionary-based problem solving, efficient searching, and using `enumerate()` to work with both values and indices.
+To practise dictionary operations and learn how to solve the Two Sum problem efficiently using a hash map.
