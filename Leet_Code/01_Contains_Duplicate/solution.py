@@ -1,29 +1,16 @@
-# Store the numbers to check
-numbers = [1, 2, 3, 4]
+# LeetCode #217 - Contains Duplicate
 
-# Store numbers that have already been seen
-new_num = []
+class Solution:
 
+    def containsDuplicate(self, nums):
 
-# Check whether a duplicate number exists
-def seen_num():
+        seen = set()
 
-    for num in numbers:
+        for num in nums:
 
-        if num in new_num:
-            return True
+            if num in seen:
+                return True
 
-        else:
-            new_num.append(num)
+            seen.add(num)
 
-    return False
-
-
-# Display whether a duplicate was found
-if seen_num() == True:
-
-    print("True")
-
-else:
-
-    print("False")
+        return False
