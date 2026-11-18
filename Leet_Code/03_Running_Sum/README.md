@@ -1,54 +1,40 @@
-# Contains Duplicate – Set-Based Approach
+# Running Sum of 1d Array
 
-A Python solution to LeetCode Problem 217 (Contains Duplicate) using a set to efficiently identify repeated elements.
+**LeetCode Problem:** #1480
 
 ## Problem Description
 
-Given a list of integers `nums`, determine whether any value appears at least twice.
-
-- Return `True` if a duplicate exists.
-- Return `False` if every element is unique.
+Given an array of numbers, return an array where each element is the sum of all elements from the beginning up to that position.
 
 ## Example
 
-**Input:**
-```python
-nums = [1, 2, 3, 1]
-```
+**Input:** `[1, 2, 3, 4]`
 
-**Output:**
-```text
-True
-```
+**Output:** `[1, 3, 6, 10]`
 
-**Explanation:**
+## Concepts Used
 
-The number `1` appears more than once in the list.
-
-## Concepts Practiced
-
-- Python sets
+- Python classes and methods
+- Lists
 - `for` loops
-- Conditional statements
-- Set membership using `in`
-- `set.add()` method
-- Functions and return values
-- Duplicate detection
+- Running totals
+- `append()`
+- `return`
 
 ## How It Works
 
-1. An empty set named `seen` is created to store visited numbers.
-2. The program iterates through each number in `nums`.
-3. It checks whether the current number already exists in `seen`.
-4. If the number exists, the function immediately returns `True`.
-5. Otherwise, the number is added to the set using `seen.add(num)`.
-6. If the loop finishes without finding a duplicate, the function returns `False`.
+1. Create an empty list named `result`.
+2. Initialize `total` to zero.
+3. Iterate through each number in the input list.
+4. Add the current number to `total`.
+5. Append the updated total to `result`.
+6. Return the completed result list.
 
 ## Time and Space Complexity
 
-- **Time Complexity:** O(n) – Each number is processed once, and set membership checking takes O(1) average time.
-- **Space Complexity:** O(n) – The set may store all elements if no duplicates exist.
+- **Time Complexity:** O(n) — Each element is visited once.
+- **Space Complexity:** O(n) — A result list stores the running sums.
 
-## Purpose
+## Learning Purpose
 
-To understand how Python sets can improve searching efficiency and solve duplicate detection problems with better average-time performance than a list-based approach.
+To practise list operations, loops, and maintaining a cumulative total while processing an array.
