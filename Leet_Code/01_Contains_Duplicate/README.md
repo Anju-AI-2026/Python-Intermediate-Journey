@@ -1,49 +1,49 @@
-# Contains Duplicate – List-Based Approach
+# Contains Duplicate
 
-A Python solution to check whether a list contains any duplicate numbers using a separate list to track previously visited elements.
+**LeetCode Problem:** #217
+
+A Python solution to determine whether an array contains any duplicate elements using a set.
 
 ## Problem Description
 
-Given a list of numbers, determine whether any number appears more than once.
-
-- Return `True` if a duplicate exists.
-- Return `False` if all numbers are unique.
+Given an integer array `nums`, return `True` if any value appears at least twice. Return `False` if every element is distinct.
 
 ## Example
 
 **Input:**
 ```python
-numbers = [1, 2, 3, 4]
+nums = [1, 2, 3, 1]
 ```
 
 **Output:**
 ```text
-False
+True
 ```
+
+**Explanation:** The number `1` appears more than once.
 
 ## Concepts Practiced
 
-- Python lists
-- `for` loops
-- Conditional statements
-- List membership using `in`
+- Python sets
+- Loops and conditional statements
+- Membership checking using `in`
 - Functions and return values
-- Tracking previously visited elements
+- Duplicate detection
 
 ## How It Works
 
-1. The `numbers` list stores the input values.
-2. An empty list named `new_num` stores numbers that have already been checked.
-3. The `seen_num()` function iterates through the input list.
-4. If the current number already exists in `new_num`, the function returns `True`.
-5. Otherwise, the number is added to `new_num`.
-6. If the loop finishes without finding a duplicate, the function returns `False`.
+1. Create an empty set named `seen`.
+2. Iterate through each number in the array.
+3. Check whether the number already exists in the set.
+4. If it exists, return `True`.
+5. Otherwise, add the number to the set.
+6. If no duplicate is found, return `False`.
 
-## Time and Space Complexity
+## Complexity Analysis
 
-- **Time Complexity:** O(n²) in the worst case because checking membership in a list takes linear time.
-- **Space Complexity:** O(n) because a separate list stores previously visited numbers.
+- **Time Complexity:** O(n) average time.
+- **Space Complexity:** O(n) in the worst case.
 
 ## Purpose
 
-To practice duplicate detection using Python lists, loops, functions, and membership operators.
+To practise set operations and efficient duplicate detection in Python.
