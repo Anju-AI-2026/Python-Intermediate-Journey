@@ -1,20 +1,27 @@
-
-# LeetCode #242 - Valid Anagram
-
-from collections import Counter
+# LeetCode #283 - Move Zeroes
 
 
 class Solution:
 
-    def isAnagram(self, s, t):
+    def moveZeroes(self, nums):
 
-        if len(s) != len(t):
-            return False
+        position = 0
 
-        return Counter(s) == Counter(t)
+        for num in nums:
+
+            if num != 0:
+                nums[position] = num
+                position += 1
+
+        while position < len(nums):
+            nums[position] = 0
+            position += 1
 
 
 solution = Solution()
 
-print(solution.isAnagram("anagram", "nagaram"))  # True
-print(solution.isAnagram("rat", "car"))          # False
+numbers = [0, 1, 0, 3, 12]
+
+solution.moveZeroes(numbers)
+
+print(numbers)  # [1, 3, 12, 0, 0]
