@@ -1,28 +1,27 @@
-
-# LeetCode #283 - Move Zeroes
+# LeetCode #121 - Best Time to Buy and Sell Stock
 
 
 class Solution:
 
-    def moveZeroes(self, nums):
+    def maxProfit(self, prices):
 
-        position = 0
+        minimum_price = prices[0]
+        maximum_profit = 0
 
-        for num in nums:
+        for price in prices:
 
-            if num != 0:
-                nums[position] = num
-                position += 1
+            if price < minimum_price:
+                minimum_price = price
 
-        while position < len(nums):
-            nums[position] = 0
-            position += 1
+            profit = price - minimum_price
+
+            if profit > maximum_profit:
+                maximum_profit = profit
+
+        return maximum_profit
 
 
 solution = Solution()
 
-numbers = [0, 1, 0, 3, 12]
-
-solution.moveZeroes(numbers)
-
-print(numbers)  # [1, 3, 12, 0, 0]
+print(solution.maxProfit([7, 1, 5, 3, 6, 4]))  # 5
+print(solution.maxProfit([7, 6, 4, 3, 1]))     # 0
