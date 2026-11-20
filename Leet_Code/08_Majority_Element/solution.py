@@ -1,20 +1,22 @@
-
-# LeetCode #136 - Single Number
-
-
 class Solution:
-
-    def singleNumber(self, nums):
-
-        result = 0
+    def majorityElement(self, nums: list[int]) -> int:
+        count = 0
+        candidate = None
 
         for num in nums:
-            result ^= num
+            if count == 0:
+                candidate = num
 
-        return result
+            if num == candidate:
+                count += 1
+            else:
+                count -= 1
+
+        return candidate
 
 
-solution = Solution()
+if __name__ == "__main__":
+    solution = Solution()
 
-print(solution.singleNumber([4, 1, 2, 1, 2]))  # 4
-print(solution.singleNumber([2, 2, 1]))        # 1
+    print(solution.majorityElement([3, 2, 3]))
+    print(solution.majorityElement([2, 2, 1, 1, 1, 2, 2]))
