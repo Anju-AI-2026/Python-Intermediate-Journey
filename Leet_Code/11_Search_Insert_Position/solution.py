@@ -1,22 +1,26 @@
 class Solution:
-    def isPalindrome(self, x: int) -> bool:
-        if x < 0:
-            return False
+    def searchInsert(self, nums: list[int], target: int) -> int:
+        left = 0
+        right = len(nums) - 1
 
-        original = x
-        reversed_number = 0
+        while left <= right:
+            mid = (left + right) // 2
 
-        while x > 0:
-            digit = x % 10
-            reversed_number = reversed_number * 10 + digit
-            x //= 10
+            if nums[mid] == target:
+                return mid
 
-        return original == reversed_number
+            elif nums[mid] < target:
+                left = mid + 1
+
+            else:
+                right = mid - 1
+
+        return left
 
 
 if __name__ == "__main__":
     solution = Solution()
 
-    print(solution.isPalindrome(121))
-    print(solution.isPalindrome(-121))
-    print(solution.isPalindrome(10))
+    print(solution.searchInsert([1, 3, 5, 6], 5))
+    print(solution.searchInsert([1, 3, 5, 6], 2))
+    print(solution.searchInsert([1, 3, 5, 6], 7))
