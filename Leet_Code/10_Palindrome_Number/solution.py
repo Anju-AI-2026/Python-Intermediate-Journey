@@ -1,16 +1,22 @@
 class Solution:
-    def missingNumber(self, nums: list[int]) -> int:
-        n = len(nums)
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0:
+            return False
 
-        expected_sum = n * (n + 1) // 2
-        actual_sum = sum(nums)
+        original = x
+        reversed_number = 0
 
-        return expected_sum - actual_sum
+        while x > 0:
+            digit = x % 10
+            reversed_number = reversed_number * 10 + digit
+            x //= 10
+
+        return original == reversed_number
 
 
 if __name__ == "__main__":
     solution = Solution()
 
-    print(solution.missingNumber([3, 0, 1]))
-    print(solution.missingNumber([0, 1]))
-    print(solution.missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1]))
+    print(solution.isPalindrome(121))
+    print(solution.isPalindrome(-121))
+    print(solution.isPalindrome(10))
